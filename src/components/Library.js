@@ -6,7 +6,7 @@ const Library = ({songs,setSongs,setCurrentSong,audioRef})=>{
    
     return(<div className='library'>
         <h2>Library</h2>
-        <Link to='/' className="goBack">Go Back</Link>
+        <Link to='/' className="goBack">🙌Go Back</Link>
         <div className="library-song">
         {songs.map(song=>(
             
