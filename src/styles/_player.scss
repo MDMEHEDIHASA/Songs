@@ -1,0 +1,36 @@
+.player{
+    min-height: 20vh;
+    @include flex(column,space-between,center)
+}
+
+
+
+
+.time-control{
+    width: 50%;
+    // background: lightcoral;
+   display: flex;
+   input{
+       width: 100%;
+       padding: 1rem 0rem;
+   }
+   p{
+       padding: 1rem;
+   }
+
+   @media (max-width:768px) {
+       width: 100%;
+    }
+}
+
+
+.play-control{
+    width: 30%;
+    @include flex(row,space-between,center);
+    svg{
+        cursor: pointer;
+    }
+    @media (max-width:768px) {
+        width: 38%;
+    }
+}

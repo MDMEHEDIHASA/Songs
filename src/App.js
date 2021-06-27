@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useRef} from "react";
+import './styles/style.scss'
+import Song from "./components/Song";
+import Player from "./components/Player";
+//import data
+import data from './util'
+import Library from "./components/Library";
+import {Route} from 'react-router-dom'
+
 
 function App() {
+  const [songs,setSongs] = useState(data())
+  const [currentSong,setCurrentSong] = useState(songs[0])
+  const [playing,setPlaying] = useState(false)
+  //Ref choose html element
+  const audioRef = useRef(null)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route path='/library'>
+      <Library audioRef={audioRef} songs={songs} setSongs={setSongs} setCurrentSong={setCurrentSong}/>
+      </Route>
+      <Song currentSong={currentSong}/>
+      <Player audioRef={audioRef} playing={playing} setPlaying={setPlaying} songs={songs} setSongs={setSongs} setCurrentSong={setCurrentSong} currentSong={currentSong}/>
+      
     </div>
   );
 }

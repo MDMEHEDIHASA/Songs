@@ -1,0 +1,26 @@
+.App{
+    background-image: linear-gradient(
+        to bottom right,
+        rgba($color-primary-dark, 0.9),
+        rgba($color-tertiary-dark, 0.7)
+      ),
+      url("./hero.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+
+/*
+
+ background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url("../img/hero.jpg");
+    background-size: cover;
+    background-position: top;
+
+
+*/

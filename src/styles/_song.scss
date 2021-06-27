@@ -1,0 +1,51 @@
+.song-container{
+    min-height: 60vh;
+    padding-top: 1rem;
+    // background-color: lightblue;
+    @include flex(column,center,center);
+    .songImage{
+        width: 20%;
+        border-radius: 50%;
+        // clip-path: circle(50% at 50% 50%);
+        animation-name: moving;
+        animation-duration: 2s;
+        animation-direction: normal;
+        animation-fill-mode: both;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        @media (max-width:768px) {
+            width: 45%;;
+        }
+        
+    }
+    .songImage2{
+        width: 20%;
+        border-radius: 50%;
+    }
+    h2{
+        padding: 3rem 1rem 1rem 1rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+}
+
+@keyframes moving{
+    from {transform: rotateZ(0deg);}
+    to {transform: rotateZ(360deg);}
+}
+
+.libraryAnchor{
+    text-decoration: none;
+    background-color: darkcyan;
+    position: absolute;
+    top: 4%;
+    right: 26%;
+    padding: 1rem;
+    border-radius: 11px;
+    color: #fff;
+    @media (max-width:768px) {
+        right: 2%;
+    }
+}
+
